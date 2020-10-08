@@ -1,8 +1,8 @@
 public abstract class Transaction{
-    protected int transactionCode;
-    protected String transactionDate;
-    protected double priceEach;
-    protected double area;
+    private int transactionCode;
+    private String transactionDate;
+    private double priceEach;
+    private double area;
     public Transaction() {
 
     }
@@ -28,7 +28,23 @@ public abstract class Transaction{
     }
     
     public String getYear() {
-        return transactionDate.substring(7);
+        return transactionDate.substring(6);
+    }
+
+    public int getTransactionCode() {
+        return this.transactionCode;
+    }
+
+    public String getTransactionDate() {
+        return this.transactionDate;
+    }
+
+    public double getPriceEach() {
+        return this.priceEach;
+    }
+
+    public double getArea() {
+        return this.area;
     }
 
 }

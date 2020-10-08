@@ -11,7 +11,7 @@ public class HomeTransaction extends Transaction{
 
     public HomeTransaction(int transactionCode, String transactionDate, double priceEach, double area, String typeOfHome, int positionNumber) {
         super(transactionCode, transactionDate, priceEach, area);
-        if (typeOfHome == LUXURIOUS_HOME || typeOfHome == VILLA_HOME) {
+        if (typeOfHome.equals(LUXURIOUS_HOME) || typeOfHome.equals(VILLA_HOME)) {
             this.typeOfHome = typeOfHome;
         }
         else {
@@ -28,11 +28,11 @@ public class HomeTransaction extends Transaction{
     }
 
     public double calculatePrice() {
-        if (this.typeOfHome == LUXURIOUS_HOME) {
-            return (this.area * this.priceEach * this.positionNumber * VAT);
+        if (this.typeOfHome.equals(LUXURIOUS_HOME)) {
+            return (this.getArea() * this.getPriceEach() * this.positionNumber * VAT);
         }
-        else if (this.typeOfHome == VILLA_HOME) {
-            return (this.area * this.priceEach * this.positionNumber * 1.5 * VAT);
+        else if (this.typeOfHome.equals(VILLA_HOME)) {
+            return (this.getArea() * this.getPriceEach() * this.positionNumber * 1.5 * VAT);
         }
         else {
             return 0.0;
