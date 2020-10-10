@@ -26,10 +26,10 @@ public class LandTransaction extends Transaction{
     }
 
     public double calculatePrice() {
-        if (this.typeOfLand == A_LAND) {
+        if (this.typeOfLand.equals(A_LAND)) {
             return (this.getArea() * this.getPriceEach() * VAT);
         }
-        else if (this.typeOfLand == B_LAND) {
+        else if (this.typeOfLand.equals(B_LAND)) {
             return (this.getArea() * this.getPriceEach() * 2.0 * VAT);
         }
         else {
